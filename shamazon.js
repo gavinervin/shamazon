@@ -1,12 +1,12 @@
 var mysql = require('mysql');
 var inquirer = require('inquirer');
 
-var connection = mysql.createconnection({
+var connection = mysql.createConnection({
 	host:"localhost",
 	port:3000,
 	user:"root",
 	password:"Jostick4747",
-	database:"shamazon";
+	database:"shamazon"
 })
 
 connection.connect(function(err){
@@ -31,7 +31,7 @@ var askBuyer = function(res){
 		message:"What do you want?"
 	}]).then(function(answer){
 		var correct = false;
-		for(var i +0;i<res.length;i++){
+		for(var i=0;i<res.length;i++){
 			if(res[i].productname==answer.choice){
 				correct=true;
 				var product=answer.choice;
